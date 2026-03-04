@@ -22,5 +22,17 @@ public class Hotel {
         return habitacionEncontrada;
     }
 
+    private int encontrarPosicionLibre(){
+        int primeraPosicionLibre = -1;
+        boolean seguirBuscando = true;
+
+        for (int i = 0; i<MAX_HABITACIONES && seguirBuscando;i++){
+            if(inventario[i].getNumero() == primeraPosicionLibre){
+                primeraPosicionLibre = i;
+                seguirBuscando = false;
+            }
+        }
+        return primeraPosicionLibre;
+    }
 
 }
